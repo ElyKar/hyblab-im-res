@@ -8,9 +8,6 @@ body {
     height: 100%;
 }
 
-html {
-}
-
 .text {
     display: flex;
     align-items: center;
@@ -37,8 +34,39 @@ html {
     cursor: pointer;
 }
 
-.bg-blur {
-    position: fixed;
-    left: 0;
-    top: 0;
+.startup-input {
+    position: absolute;
+    left: 35%;
+    top: 50%;
+    width: 30%;
+    height: 10px;
+    font-size: 18pt;
+}
+
+.question {
+    font-size: 28pt;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(225,225,225,0.5);
+    color: #222;
+}
+
+.airship {
+    cursor: pointer;
+}
+
+.input-checkbox {
+    position: absolute;
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 15px;
+    background: #ddd;
+}
+
+.input-checkbox.active {
+    background: #01ff4f;
+}
+
+.input-checkbox:hover {
+    cursor: pointer;
 }

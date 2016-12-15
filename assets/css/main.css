@@ -36,10 +36,12 @@ body {
 
 .startup-input {
     position: absolute;
+    background: none;
+    border: none;
     left: 35%;
-    top: 50%;
+    top: 42%;
     width: 30%;
-    height: 10px;
+    height: 5%;
     font-size: 18pt;
 }
 
@@ -69,4 +71,14 @@ body {
 
 .input-checkbox:hover {
     cursor: pointer;
+}
+
+.btn-transp {
+    background: rgba(0,0,0,0);
+    border: none;
+}
+
+.btn-transp:hover {
+    background: rgba(0,0,0,0);
+    border: none;
 }

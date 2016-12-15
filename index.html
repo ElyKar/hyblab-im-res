@@ -3,7 +3,7 @@
     <meta name="description" content="Nos amis les koalas">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, width=890, minimal-ui">
     <link rel="icon" href="./img/favicon.ico">
-    <title>Koalas</title>
+    <title>Pôle Images et Réseaux</title>
     <script src="./assets/js/jquery-3.1.1.min.js" type="text/javascript"></script>
     <script src="./assets/js/typed.js" type="text/javascript"></script>
     <script src="./assets/js/background-blur.min.js" type="text/javascript"></script>
@@ -107,14 +107,39 @@
             });
         }
 
-        data={ "input-startup": { "background": { "content": "img/espace-terre.png" },
-                          "elements": [
-                            { type: "Text", alignment: "center", ids: "typed", content: "Ta Startup", positionX: "38%", positionY: "23%", width: "24%", height: "10%", classes: "question" },
-                            { type: "Button", id :"btn", content: "Soumettre", positionX: "45%", positionY: "71%", width: "10%", height: "30px", size: "18pt", target: {type: "Simple", content: "plan-1", effect: "fade" } },
-                            {type: "Custom", fn: function() {
-                                var inpt = "<input id='name' type='text', class='startup-input' />";
+data={ "accueil": { "background": { "content": "img/1.jpg" },
+                    "elements": [
+                    { type: "Image", src: "./img/Bouton.png", ids: "next",  positionX: "90%", positionY: "85%", width: "45px", height: "45px" },
+                    { type: "Custom", fn: function() {
+                                $("#next").click(function() {
+                                    fade = true
+                                    $("#content").css("opacity", 0);
+                                    render("img-2");
+                                    fade = false;
+                                });
+                                                     }
+                    }]
+            },
+        "img-2": { "background": { "content": "img/2.jpg" },
+                    "elements": [
+                    { type: "Image", src: "./img/Bouton.png", ids: "next",  positionX: "90%", positionY: "85%", width: "45px", height: "45px" },
+                    { type: "Custom", fn: function() {
+                                $("#next").click(function() {
+                                    fade = true
+                                    $("#content").css("opacity", 0);
+                                    render("img-3");
+                                    fade = false;
+                                });
+                                                     }
+                    }]
+            },
+        "img-3": { "background": { "content": "img/3.jpg" },
+                    "elements": [
+                    { type: "Image", src: "./img/Bouton.png", ids: "next",  positionX: "90%", positionY: "85%", width: "45px", height: "45px" },
+                    { type: "Custom", fn: function() {
+                         var inpt = "<input id='name', type='text', class='startup-input' />";
                                 $("#content").append(inpt);
-                                $("#btn").click(function() {
+                                $("#next").click(function() {
                                     startup = $("#name").val();
                                     fade = true
 									$("#content").text("");
@@ -122,9 +147,9 @@
                                     $("body").fadeTo('slow', 1);
                                     fade = false;
                                 });
-                                                            } }
-                            ]
-                        },
+                                                     }
+                    }]
+            },
                 "plan-1": {
                     "background": { "content": "img/Planetes.png" },
                     "elements": [
@@ -140,11 +165,10 @@
                     ]
                 },
                 "choice-1": {
-                    "background": { "content": "img/espace-terre.png" },
+                    "background": { "content": "./img/4.jpg" },
                     "elements": [
-                        { type: "Text", alignment: "center", content: "Partenaires ?", positionX: "38%", positionY: "15%", width: "24%", height: "10%", classes: "question" },
-                        { type: "Button", content: "Choix 1", positionX: "20%", positionY: "71%", width: "20%", height: "30px", size: "16pt", target: {type: "Simple", content: "plan-2", effect: "fade" } },
-                        { type: "Button", content: "Choix 2", positionX: "60%", positionY: "71%", width: "20%", height: "30px", size: "16pt", target: {type: "Simple", content: "plan-3", effect: "fade" } },
+                    { type: "Button", content: "", positionX: "11%", positionY: "38%", width: "30%", height: "12%", target: { type: "Simple", content: "plan-2", effect: "fade" }, classes: "btn-transp" },
+                    { type: "Button", content: "", positionX: "56%", positionY: "38%", width: "30%", height: "12%", target: { type: "Simple", content: "plan-3", effect: "fade" }, classes: "btn-transp" },
                     ]
                 },
                 "plan-2": {
@@ -176,32 +200,31 @@
                     ]
                 },
                 "choice-3": {
-                    "background": { "content": "img/espace-terre.png" },
+                    "background": { "content": "./img/Labellisation.jpg" },
                     "elements": [
-                        { type: "Text", alignment: "center", content: "I & R\nLabellisation", positionX: "38%", positionY: "15%", width: "24%", height: "15%", classes: "question" },
-                        { type: "Image", ids:"ch1", classes: "airship", src: "./img/fusee.gif", positionX: "20%", positionY: "53%", width: "10%", height: "20%"},
-                        { type: "Image", ids:"ch2", classes: "airship", src: "./img/fusee.gif", positionX: "45%", positionY: "53%", width: "10%", height: "20%"},
-                        { type: "Image", ids:"ch3", classes: "airship", src: "./img/fusee.gif", positionX: "70%", positionY: "53%", width: "10%", height: "20%"},
+                        { type: "Text", content: "", ids:"ch1", classes: "btn-transp", positionX: "18%", positionY: "35%", width: "20%", height: "40%"},
+                        { type: "Text", content: "", ids:"ch2", classes: "btn-transp", positionX: "42%", positionY: "35%", width: "20%", height: "40%"},
+                        { type: "Text", content: "", ids:"ch3", classes: "btn-transp", positionX: "69%", positionY: "35%", width: "20%", height: "40%"},
                         { type: "Custom", fn: function() {
                                 // WINNER IS NUMBER 2
                                 $("#ch1").click(function() {
                                     fade = true
                                     $("#content").text("");
-                                    render("plan-4");
-                                    $("body").fadeTo('slow', 1);
-                                    fade = false;
-                                });
-                                $("#ch2").click(function() {
-                                    fade = true
-                                    $("#content").text("");
-                                    render("plan-5");
+                                    render("plan-4sat");
                                     $("body").fadeTo('slow', 1);
                                     fade = false;
                                 });
                                 $("#ch3").click(function() {
                                     fade = true
                                     $("#content").text("");
-                                    render("plan-4");
+                                    render("plan-5");
+                                    $("body").fadeTo('slow', 1);
+                                    fade = false;
+                                });
+                                $("#ch2").click(function() {
+                                    fade = true
+                                    $("#content").text("");
+                                    render("plan-4zer");
                                     $("body").fadeTo('slow', 1);
                                     fade = false;
                                 });
@@ -210,14 +233,28 @@
 
                     ]
                 },
-                "plan-4": {
+                "plan-4zer": {
                     "background": { "content": "img/Planetes.png" },
                     "elements": [
                         { type: "Custom", fn: function() {
                             setTimeout(function() {
 								fade = true
                                 $("#content").css("opacity", 0);
-								render("choice-4");
+								render("choice-4zer");
+								fade = false;
+                            }, 2000);
+                                                         }
+                        }
+                    ]
+                },
+                "plan-4sat": {
+                    "background": { "content": "img/Planetes.png" },
+                    "elements": [
+                        { type: "Custom", fn: function() {
+                            setTimeout(function() {
+								fade = true
+                                $("#content").css("opacity", 0);
+								render("choice-4sat");
 								fade = false;
                             }, 2000);
                                                          }
@@ -245,12 +282,35 @@
                         { type: "Button", id :"btn", content: "Suivant", positionX: "45%", positionY: "71%", width: "10%", height: "30px", size: "18pt", target: {type: "Simple", content: "choice-3", effect: "fade" } },
                     ]
                 },
-                "choice-4": {
-                    "background": {content: "img/espace-terre.png" },
+                "choice-4zer": {
+                    "background": {content: "./img/echec cloud zéro.jpg" },
                     "elements": [
-                        { type: "Text", content: "Explication Echec", classes: "question", positionX: "38%", positionY: "30%", width: "26%", height: "10%" },
-                        { type: "Button", id :"btn", content: "Suivant", positionX: "45%", positionY: "71%", width: "10%", height: "30px", size: "18pt", target: {type: "Simple", content: "choice-3", effect: "fade" } },
-                    ]
+                    { type: "Image", src: "./img/Bouton.png", ids: "next",  positionX: "90%", positionY: "85%", width: "45px", height: "45px" },
+                    { type: "Custom", fn: function() {
+                                $("#next").click(function() {
+                                    fade = true
+                                    $("#content").css("opacity", 0);
+                                    render("choice-3");
+                                    fade = false;
+                                });
+                                                     }
+                    }]
+
+                },
+                "choice-4sat": {
+                    "background": {content: "./img/echec satellite.jpg" },
+                    "elements": [
+                    { type: "Image", src: "./img/Bouton.png", ids: "next",  positionX: "90%", positionY: "85%", width: "45px", height: "45px" },
+                    { type: "Custom", fn: function() {
+                                $("#next").click(function() {
+                                    fade = true
+                                    $("#content").css("opacity", 0);
+                                    render("choice-3");
+                                    fade = false;
+                                });
+                                                     }
+                    }]
+
                 },
                 "choice-5": {
                     "background": { content: "img/espace-terre.png" },
@@ -355,7 +415,7 @@
             };
 
         $(function() {
-            render("input-startup");
+            render("choice-3");
         });
 
         function checkResult(received, expected) {

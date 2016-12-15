@@ -276,11 +276,18 @@ data={ "accueil": { "background": { "content": "img/1.jpg" },
                     ]
                 },
                 "choice-2": {
-                    "background": {content: "img/espace-terre.png" },
+                    "background": {content: "./img/data.jpg" },
                     "elements": [
-                        { type: "Image", src: "./img/dummy-hist.png", positionX: "30%", positionY: "30%", width: "40%", height: "35%"  },
-                        { type: "Button", id :"btn", content: "Suivant", positionX: "45%", positionY: "71%", width: "10%", height: "30px", size: "18pt", target: {type: "Simple", content: "choice-3", effect: "fade" } },
-                    ]
+                    { type: "Image", src: "./img/Bouton.png", ids: "next",  positionX: "90%", positionY: "85%", width: "45px", height: "45px" },
+                    { type: "Custom", fn: function() {
+                                $("#next").click(function() {
+                                    fade = true
+                                    $("#content").css("opacity", 0);
+                                    render("choice-3");
+                                    fade = false;
+                                });
+                                                     }
+                    }]
                 },
                 "choice-4zer": {
                     "background": {content: "./img/echec cloud zéro.jpg" },
@@ -313,19 +320,18 @@ data={ "accueil": { "background": { "content": "img/1.jpg" },
 
                 },
                 "choice-5": {
-                    "background": { content: "img/espace-terre.png" },
+                    "background": { content: "./img/financement.jpg" },
                     "elements": [
-                        { type: "Text", alignment: "center", content: "Financements", positionX: "35%", positionY: "10%", width: "30%", height: "10%", classes: "question"},
-                        { type: "Text", ids: "btn1", content: "", positionX: "29%", positionY: "35%", classes: "input-checkbox" },
-                        { type: "Text", ids: "btn2", content: "", positionX: "49%", positionY: "35%", classes: "input-checkbox" },
-                        { type: "Text", ids: "btn3", content: "", positionX: "68%", positionY: "35%", classes: "input-checkbox" },
-                        { type: "Text", ids: "btn4", content: "", positionX: "29%", positionY: "45%", classes: "input-checkbox" },
-                        { type: "Text", ids: "btn5", content: "", positionX: "49%", positionY: "45%", classes: "input-checkbox" },
-                        { type: "Text", ids: "btn6", content: "", positionX: "68%", positionY: "45%", classes: "input-checkbox" },
-                        { type: "Text", ids: "btn7", content: "", positionX: "29%", positionY: "55%", classes: "input-checkbox" },
-                        { type: "Text", ids: "btn8", content: "", positionX: "49%", positionY: "55%", classes: "input-checkbox" },
-                        { type: "Text", ids: "btn9", content: "", positionX: "68%", positionY: "55%", classes: "input-checkbox" },
-                        { type: "Button", ids :"btnGo", content: "Soumettre", positionX: "45%", positionY: "71%", width: "10%", height: "30px", size: "18pt", target: {type: "Simple", content: "", effect: "fade" } },
+                        { type: "Image", src: "./img/Bouton.png", ids: "next",  positionX: "90%", positionY: "85%", width: "45px", height: "45px" },
+                        { type: "Text", ids: "btn1", content: "", positionX: "12.3%", positionY: "41.7%", classes: "input-checkbox" },
+                        { type: "Text", ids: "btn2", content: "", positionX: "36.5%", positionY: "41.7%", classes: "input-checkbox" },
+                        { type: "Text", ids: "btn3", content: "", positionX: "60.7%", positionY: "41.7%", classes: "input-checkbox" },
+                        { type: "Text", ids: "btn4", content: "", positionX: "12.3%", positionY: "51.9%", classes: "input-checkbox" },
+                        { type: "Text", ids: "btn5", content: "", positionX: "36.5%", positionY: "51.9%", classes: "input-checkbox" },
+                        { type: "Text", ids: "btn6", content: "", positionX: "60.7%", positionY: "51.9%", classes: "input-checkbox" },
+                        { type: "Text", ids: "btn7", content: "", positionX: "12.3%", positionY: "62.0%", classes: "input-checkbox" },
+                        { type: "Text", ids: "btn8", content: "", positionX: "36.5%", positionY: "62.0%", classes: "input-checkbox" },
+                        { type: "Text", ids: "btn9", content: "", positionX: "60.7%", positionY: "62.0%", classes: "input-checkbox" },
                         { type: "Custom", fn: function() {
                             $("#btn1").click(function() { $("#btn1").toggleClass("active") });
                             $("#btn2").click(function() { $("#btn2").toggleClass("active") });
@@ -338,8 +344,7 @@ data={ "accueil": { "background": { "content": "img/1.jpg" },
                             $("#btn9").click(function() { $("#btn9").toggleClass("active") });
 
                             // CHANGE THE COMBINATION
-                            $("#btnGo").unbind("click");
-                            $("#btnGo").click(function() {
+                            $("#next").click(function() {
                                 var expected = [true, true, true, false, false, false, undefined, undefined, undefined];
                                 var gotten = [false, false, false, false, false, false, false, false, false];
                                 if ($("#btn1").attr("class").split(' ').indexOf("active") != -1) { gotten[0] = true; }
@@ -365,44 +370,75 @@ data={ "accueil": { "background": { "content": "img/1.jpg" },
                     ]
                 },
                 "choice-5-ko": {
-                    "background": {content: "img/espace-terre.png" },
+                    "background": {content: "./img/Echec finance.jpg" },
                     "elements": [
-                        { type: "Text", content: "Explication Echec", classes: "question", positionX: "38%", positionY: "30%", width: "26%", height: "10%" },
-                        { type: "Button", id :"btn", content: "Suivant", positionX: "45%", positionY: "71%", width: "10%", height: "30px", size: "18pt", target: {type: "Simple", content: "choice-5", effect: "fade" } },
+                        { type: "Button", classes: "btn-transp", id :"btn", content: "", positionX: "30%", positionY: "73%", width: "45%", height: "30px", size: "18pt", target: {type: "Simple", content: "choice-5", effect: "fade" } }
                     ]
                 },
                 "choice-5-ok": {
-                    "background": {content: "img/espace-terre.png" },
+                    "background": {content: "./img/Bravo finance.jpg" },
                     "elements": [
-                        { type: "Text", content: "Explication Reussite", classes: "question", positionX: "38%", positionY: "30%", width: "26%", height: "10%" },
-                        { type: "Button", id :"btn", content: "Suivant", positionX: "45%", positionY: "71%", width: "10%", height: "30px", size: "18pt", target: {type: "Simple", content: "plan-6", effect: "fade" } },
+                    { type: "Image", src: "./img/Bouton.png", ids: "next",  positionX: "90%", positionY: "85%", width: "45px", height: "45px" },
+                    { type: "Custom", fn: function() {
+                                $("#next").click(function() {
+                                    fade = true
+                                    $("#content").css("opacity", 0);
+                                    render("plan-6");
+                                    fade = false;
+                                });
+                                                     }
+                    }
                     ]
                 },
                 "plan-6": {
                     "background": { "content": "img/Planetes.png" },
-                    "elements": []
-                        // goto choice 6
+                    "elements": [
+                        { type: "Custom", fn: function() {
+                            setTimeout(function() {
+								fade = true
+                                $("#content").css("opacity", 0);
+								render("choice-6");
+								fade = false;
+                            }, 2000);
+                                                         }
+                        }
+                    ]
                 },
                 "choice-6": {
-                    "background": { "content": "img/espace-terre.png" },
+                    "background": { "content": "./img/sci ou éco.jpg" },
                     "elements": [
-                        { type: "Text", alignment: "center", content: "Orientation", positionX: "38%", positionY: "15%", width: "24%", height: "10%", classes: "question" },
-                        { type: "Button", content: "Sciences", positionX: "20%", positionY: "71%", width: "20%", height: "30px", size: "18pt", target: {type: "Simple", content: "sciences", effect: "fade" } },
-                        { type: "Button", content: "Eco", positionX: "60%", positionY: "71%", width: "20%", height: "30px", size: "18pt", target: {type: "Simple", content: "eco", effect: "fade" } },
+                        { type: "Button", content: "", positionX: "8%", positionY: "36%", width: "38%", height: "14%", classes: "btn-transp", size: "18pt", target: {type: "Simple", content: "sciences", effect: "fade" } },
+                        { type: "Button", content: "", positionX: "52%", positionY: "36%", width: "38%", height: "14%", classes: "btn-transp", size: "18pt", target: {type: "Simple", content: "eco", effect: "fade" } },
                     ]
                 },
                 "sciences": {
-                    "background": {content: "img/espace-terre.png" },
+                    "background": {content: "./img/valoris scien.png" },
                     "elements": [
-                        { type: "Text", content: "Sciences", classes: "question", positionX: "38%", positionY: "30%", width: "26%", height: "10%" },
-                        { type: "Button", id :"btn", content: "Suivant", positionX: "45%", positionY: "71%", width: "10%", height: "30px", size: "18pt", target: {type: "Simple", content: "congrats", effect: "fade" } },
+                    { type: "Image", src: "./img/Bouton.png", ids: "next",  positionX: "90%", positionY: "85%", width: "45px", height: "45px" },
+                    { type: "Custom", fn: function() {
+                                $("#next").click(function() {
+                                    fade = true
+                                    $("#content").css("opacity", 0);
+                                    render("congrats");
+                                    fade = false;
+                                });
+                                                     }
+                    }
                     ]
                 },
                 "eco": {
-                    "background": {content: "img/espace-terre.png" },
+                    "background": {content: "./img/valoris eco.png" },
                     "elements": [
-                        { type: "Text", content: "Eco", classes: "question", positionX: "38%", positionY: "30%", width: "26%", height: "10%" },
-                        { type: "Button", id :"btn", content: "Suivant", positionX: "45%", positionY: "71%", width: "10%", height: "30px", size: "18pt", target: {type: "Simple", content: "congrats", effect: "fade" } },
+                    { type: "Image", src: "./img/Bouton.png", ids: "next",  positionX: "90%", positionY: "85%", width: "45px", height: "45px" },
+                    { type: "Custom", fn: function() {
+                                $("#next").click(function() {
+                                    fade = true
+                                    $("#content").css("opacity", 0);
+                                    render("congrats");
+                                    fade = false;
+                                });
+                                                     }
+                    }
                     ]
                 },
                 "congrats": {
@@ -415,7 +451,7 @@ data={ "accueil": { "background": { "content": "img/1.jpg" },
             };
 
         $(function() {
-            render("choice-3");
+            render("accueil");
         });
 
         function checkResult(received, expected) {

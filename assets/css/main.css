@@ -59,14 +59,13 @@ body {
 
 .input-checkbox {
     position: absolute;
-    width: 30px !important;
-    height: 30px !important;
-    border-radius: 15px;
-    background: #ddd;
+    width: 22.8% !important;
+    height: 7.5% !important;
+    background: none;
 }
 
 .input-checkbox.active {
-    background: #01ff4f;
+    border: solid 5px #01ff4f;
 }
 
 .input-checkbox:hover {

@@ -151,7 +151,7 @@ data={ "accueil": { "background": { "content": "img/1.jpg" },
                     }]
             },
                 "plan-1": {
-                    "background": { "content": "img/Planetes.png" },
+                    "background": { "content": "img/fusee-1.gif" },
                     "elements": [
                         { type: "Custom", fn: function() {
                             setTimeout(function() {
@@ -159,7 +159,7 @@ data={ "accueil": { "background": { "content": "img/1.jpg" },
                                 $("#content").css("opacity", 0);
 								render("choice-1");
 								fade = false;
-                            }, 2000);
+                            }, 6000);
                                                          }
                         }
                     ]
@@ -172,7 +172,7 @@ data={ "accueil": { "background": { "content": "img/1.jpg" },
                     ]
                 },
                 "plan-2": {
-                    "background": { "content": "img/Planetes.png" },
+                    "background": { "content": "img/fusee-2.gif" },
                     "elements": [
                         { type: "Custom", fn: function() {
                             setTimeout(function() {
@@ -180,13 +180,13 @@ data={ "accueil": { "background": { "content": "img/1.jpg" },
                                 $("#content").css("opacity", 0);
 								render("choice-2");
 								fade = false;
-                            }, 2000);
+                            }, 6500);
                                                          }
                         }
                     ]
                 },
                 "plan-3": {
-                    "background": { "content": "img/Planetes.png" },
+                    "background": { "content": "img/fusee-3.gif" },
                     "elements": [
                         { type: "Custom", fn: function() {
                             setTimeout(function() {
@@ -194,7 +194,7 @@ data={ "accueil": { "background": { "content": "img/1.jpg" },
                                 $("#content").css("opacity", 0);
 								render("choice-3");
 								fade = false;
-                            }, 2000);
+                            }, 6500);
                                                          }
                         }
                     ]
@@ -234,7 +234,7 @@ data={ "accueil": { "background": { "content": "img/1.jpg" },
                     ]
                 },
                 "plan-4zer": {
-                    "background": { "content": "img/Planetes.png" },
+                    "background": { "content": "img/fusee-5.gif" },
                     "elements": [
                         { type: "Custom", fn: function() {
                             setTimeout(function() {
@@ -242,13 +242,13 @@ data={ "accueil": { "background": { "content": "img/1.jpg" },
                                 $("#content").css("opacity", 0);
 								render("choice-4zer");
 								fade = false;
-                            }, 2000);
+                            }, 6500);
                                                          }
                         }
                     ]
                 },
                 "plan-4sat": {
-                    "background": { "content": "img/Planetes.png" },
+                    "background": { "content": "img/fusee-5.gif" },
                     "elements": [
                         { type: "Custom", fn: function() {
                             setTimeout(function() {
@@ -256,13 +256,13 @@ data={ "accueil": { "background": { "content": "img/1.jpg" },
                                 $("#content").css("opacity", 0);
 								render("choice-4sat");
 								fade = false;
-                            }, 2000);
+                            }, 6500);
                                                          }
                         }
                     ]
                 },
                 "plan-5": {
-                    "background": { "content": "img/Planetes.png" },
+                    "background": { "content": "img/Fusee6.gif" },
                     "elements": [
                         { type: "Custom", fn: function() {
                             setTimeout(function() {
@@ -270,7 +270,21 @@ data={ "accueil": { "background": { "content": "img/1.jpg" },
                                 $("#content").css("opacity", 0);
 								render("choice-5");
 								fade = false;
-                            }, 2000);
+                            }, 5000);
+                                                         }
+                        }
+                    ]
+                },
+                "plan-3bis": {
+                    "background": { "content": "img/fusee-4.gif" },
+                    "elements": [
+                        { type: "Custom", fn: function() {
+                            setTimeout(function() {
+								fade = true
+                                $("#content").css("opacity", 0);
+								render("choice-3");
+								fade = false;
+                            }, 6500);
                                                          }
                         }
                     ]
@@ -283,7 +297,7 @@ data={ "accueil": { "background": { "content": "img/1.jpg" },
                                 $("#next").click(function() {
                                     fade = true
                                     $("#content").css("opacity", 0);
-                                    render("choice-3");
+                                    render("plan-3bis");
                                     fade = false;
                                 });
                                                      }
@@ -391,7 +405,7 @@ data={ "accueil": { "background": { "content": "img/1.jpg" },
                     ]
                 },
                 "plan-6": {
-                    "background": { "content": "img/Planetes.png" },
+                    "background": { "content": "img/fusee7.gif" },
                     "elements": [
                         { type: "Custom", fn: function() {
                             setTimeout(function() {
@@ -399,7 +413,7 @@ data={ "accueil": { "background": { "content": "img/1.jpg" },
                                 $("#content").css("opacity", 0);
 								render("choice-6");
 								fade = false;
-                            }, 2000);
+                            }, 6500);
                                                          }
                         }
                     ]

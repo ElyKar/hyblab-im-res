@@ -127,8 +127,17 @@
                         },
                 "plan-1": {
                     "background": { "content": "img/Planetes.png" },
-                    "elements": []
-                        // goto choice 1
+                    "elements": [
+                        { type: "Custom", fn: function() {
+                            setTimeout(function() {
+								fade = true
+                                $("#content").css("opacity", 0);
+								render("choice-1");
+								fade = false;
+                            }, 2000);
+                                                         }
+                        }
+                    ]
                 },
                 "choice-1": {
                     "background": { "content": "img/espace-terre.png" },
@@ -140,13 +149,31 @@
                 },
                 "plan-2": {
                     "background": { "content": "img/Planetes.png" },
-                    "elements": []
-                        // goto choice 2
+                    "elements": [
+                        { type: "Custom", fn: function() {
+                            setTimeout(function() {
+								fade = true
+                                $("#content").css("opacity", 0);
+								render("choice-2");
+								fade = false;
+                            }, 2000);
+                                                         }
+                        }
+                    ]
                 },
                 "plan-3": {
                     "background": { "content": "img/Planetes.png" },
-                    "elements": []
-                        // goto choice 3
+                    "elements": [
+                        { type: "Custom", fn: function() {
+                            setTimeout(function() {
+								fade = true
+                                $("#content").css("opacity", 0);
+								render("choice-3");
+								fade = false;
+                            }, 2000);
+                                                         }
+                        }
+                    ]
                 },
                 "choice-3": {
                     "background": { "content": "img/espace-terre.png" },
@@ -185,13 +212,31 @@
                 },
                 "plan-4": {
                     "background": { "content": "img/Planetes.png" },
-                    "elements": []
-                        // goto choice 4
+                    "elements": [
+                        { type: "Custom", fn: function() {
+                            setTimeout(function() {
+								fade = true
+                                $("#content").css("opacity", 0);
+								render("choice-4");
+								fade = false;
+                            }, 2000);
+                                                         }
+                        }
+                    ]
                 },
                 "plan-5": {
                     "background": { "content": "img/Planetes.png" },
-                    "elements": []
-                        // goto choice 5
+                    "elements": [
+                        { type: "Custom", fn: function() {
+                            setTimeout(function() {
+								fade = true
+                                $("#content").css("opacity", 0);
+								render("choice-5");
+								fade = false;
+                            }, 2000);
+                                                         }
+                        }
+                    ]
                 },
                 "choice-2": {
                     "background": {content: "img/espace-terre.png" },

@@ -323,15 +323,15 @@ data={ "accueil": { "background": { "content": "img/1.jpg" },
                     "background": { content: "./img/financement.jpg" },
                     "elements": [
                         { type: "Image", src: "./img/Bouton.png", ids: "next",  positionX: "90%", positionY: "85%", width: "45px", height: "45px" },
-                        { type: "Text", ids: "btn1", content: "", positionX: "12.3%", positionY: "41.7%", classes: "input-checkbox" },
-                        { type: "Text", ids: "btn2", content: "", positionX: "36.5%", positionY: "41.7%", classes: "input-checkbox" },
-                        { type: "Text", ids: "btn3", content: "", positionX: "60.7%", positionY: "41.7%", classes: "input-checkbox" },
-                        { type: "Text", ids: "btn4", content: "", positionX: "12.3%", positionY: "51.9%", classes: "input-checkbox" },
-                        { type: "Text", ids: "btn5", content: "", positionX: "36.5%", positionY: "51.9%", classes: "input-checkbox" },
-                        { type: "Text", ids: "btn6", content: "", positionX: "60.7%", positionY: "51.9%", classes: "input-checkbox" },
-                        { type: "Text", ids: "btn7", content: "", positionX: "12.3%", positionY: "62.0%", classes: "input-checkbox" },
-                        { type: "Text", ids: "btn8", content: "", positionX: "36.5%", positionY: "62.0%", classes: "input-checkbox" },
-                        { type: "Text", ids: "btn9", content: "", positionX: "60.7%", positionY: "62.0%", classes: "input-checkbox" },
+                        { type: "Text", ids: "btn1", content: "", positionX: "12.5%", positionY: "42.1%", classes: "input-checkbox" },
+                        { type: "Text", ids: "btn2", content: "", positionX: "37.1%", positionY: "42.1%", classes: "input-checkbox" },
+                        { type: "Text", ids: "btn3", content: "", positionX: "61.8%", positionY: "42.1%", classes: "input-checkbox" },
+                        { type: "Text", ids: "btn4", content: "", positionX: "12.5%", positionY: "52.5%", classes: "input-checkbox" },
+                        { type: "Text", ids: "btn5", content: "", positionX: "37.1%", positionY: "52.5%", classes: "input-checkbox" },
+                        { type: "Text", ids: "btn6", content: "", positionX: "61.8%", positionY: "52.5%", classes: "input-checkbox" },
+                        { type: "Text", ids: "btn7", content: "", positionX: "12.5%", positionY: "62.7%", classes: "input-checkbox" },
+                        { type: "Text", ids: "btn8", content: "", positionX: "37.1%", positionY: "62.7%", classes: "input-checkbox" },
+                        { type: "Text", ids: "btn9", content: "", positionX: "61.8%", positionY: "62.7%", classes: "input-checkbox" },
                         { type: "Custom", fn: function() {
                             $("#btn1").click(function() { $("#btn1").toggleClass("active") });
                             $("#btn2").click(function() { $("#btn2").toggleClass("active") });
@@ -345,7 +345,7 @@ data={ "accueil": { "background": { "content": "img/1.jpg" },
 
                             // CHANGE THE COMBINATION
                             $("#next").click(function() {
-                                var expected = [true, true, true, false, false, false, undefined, undefined, undefined];
+                                var expected = [true, true, true, true, undefined, undefined, false, false, false];
                                 var gotten = [false, false, false, false, false, false, false, false, false];
                                 if ($("#btn1").attr("class").split(' ').indexOf("active") != -1) { gotten[0] = true; }
                                 if ($("#btn2").attr("class").split(' ').indexOf("active") != -1) { gotten[1] = true; }
@@ -427,7 +427,7 @@ data={ "accueil": { "background": { "content": "img/1.jpg" },
                     ]
                 },
                 "eco": {
-                    "background": {content: "./img/valoris eco.png" },
+                    "background": {content: "./img/valorisation éco.jpg" },
                     "elements": [
                     { type: "Image", src: "./img/Bouton.png", ids: "next",  positionX: "90%", positionY: "85%", width: "45px", height: "45px" },
                     { type: "Custom", fn: function() {
@@ -442,16 +442,28 @@ data={ "accueil": { "background": { "content": "img/1.jpg" },
                     ]
                 },
                 "congrats": {
-                    "background": {content: "img/espace-terre.png" },
+                    "background": {content: "./img/félicitations.jpg" },
                     "elements": [
-                        { type: "Text", content: "Félicitations", classes: "question", positionX: "38%", positionY: "30%", width: "26%", height: "10%" },
-                        { type: "Button", id :"btn", content: "Suivant", positionX: "45%", positionY: "71%", width: "10%", height: "30px", size: "18pt", target: {type: "Simple", content: "exit", effect: "fade" } },
+                    { type: "Custom", fn: function() {
+                                                         setTimeout(function() {
+                                    fade = true
+                                    $("#content").css("opacity", 0);
+                                    render("credits");
+                                    fade = false;
+                                                         }, 3000);
+                                                     }}
+
                     ]
                 },
+                "credits": {
+                    "background": { content: "./img/PARTENAIRE.jpg" },
+                    "elements": []
+                }
+
             };
 
         $(function() {
-            render("accueil");
+            render("choice-5");
         });
 
         function checkResult(received, expected) {
